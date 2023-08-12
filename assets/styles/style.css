@@ -1,0 +1,109 @@
+.container {
+    display: grid;
+    grid-template-areas: "header header"
+    "main aside"
+    "footer footer";
+    grid-template-rows: 15% 65% 20%;
+    grid-template-columns: 70% 30%;
+    max-width: 100vw;
+    min-height: 100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    text-align: center;
+}
+.header {
+    grid-area: header;
+    width: 100%;
+    background-color: rgb(186, 186, 186);
+}
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas: "h h"
+    "section_a section_a1"
+    "section_b section_b";
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 45% 20% 20%;
+    gap: 5%;
+    justify-content: center;
+    font-size: 2vh;
+    background-color: rgb(252, 252, 204);
+}
+.h {
+    grid-area: h;
+}
+.section_a, .section_a1, .section_b {
+    background-color: rgb(255, 255, 154);
+}
+.section_b {
+    grid-area: section_b;
+}
+.aside {
+    grid-area: aside;
+    background-color: rgb(191, 243, 175);
+}
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: 90%;
+    width: 100vw;
+    gap: 4%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2vh;
+    background-color: rgb(186, 186, 186);
+}
+.section_f {
+    height: 70%;
+    background-color: white;
+}
+@media screen and (max-width: 414px) {
+    .header {
+        min-width: 100vw;
+        min-height: 15vh;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vh;
+        text-align: center;
+        background-color: rgb(186, 186, 186);
+    }
+    .main {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 1fr);
+        min-width: 100vw;
+        min-height: 85vh;
+        gap: 5%;
+        font-size: 2vh;
+        text-align: center;
+        background-color: rgb(252, 252, 204);
+    }
+    .h {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .section_a {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .section_a1 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .section_b {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+    .section_a, .section_a1, .section_b {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-bottom: 5vh;
+        background-color: rgb(255, 255, 154);
+    }
+    .aside {
+        display: none;
+    }
+    .footer {
+        display: none;
+    }
+}
